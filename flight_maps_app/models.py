@@ -16,27 +16,28 @@ class Flight(models.Model):
 
     def __str__(self):
         return f"{self.source} to {self.destination} on {self.date}"
-
+#might remove
 class Reservation(models.Model):
     flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    #user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return f"Reservation {self.id} for Flight {self.flight_id} by User {self.user_id}"
 
-
+"""
 class CustomUser(AbstractUser):
     user_identifier = models.CharField(max_length=100, unique=True)
 
+
 class UserProfile(models.Model):
     user = models.OneToOneField(
-        settings.AUTH_USER_MODEL, 
+        #settings.AUTH_USER_MODEL, 
         on_delete=models.CASCADE,
         related_name='userprofile'
     )
     user_identifier = models.CharField(max_length=100, unique=True)
-
+"""
 class FlightReservation(models.Model):
     flight_id = models.CharField(max_length=20, primary_key=True)
     source = models.CharField(max_length=100)

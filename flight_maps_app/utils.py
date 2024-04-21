@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.conf import settings
 from django.contrib.auth import get_user_model
-from flight_maps_app.models import UserProfile
+#from flight_maps_app.models import UserProfile
 
 class FlightSearch:
     @staticmethod
@@ -115,7 +115,7 @@ class FlightReservation:
             return True
         else:
             return False
-
+'''
 User = get_user_model()
 
 class UserAccount:
@@ -165,4 +165,4 @@ class UserAccount:
         - request: HttpRequest object from Django.
         """
         logout(request)
-
+'''

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'flight_maps_app.apps.FlightMapsAppConfig',
+    
 ]
 
 MIDDLEWARE = [
@@ -123,4 +124,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'flight_maps_app.User'
+#AUTH_USER_MODEL = 'flight_maps_app.User'
