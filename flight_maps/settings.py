@@ -37,9 +37,29 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #our main app config
     'flight_maps_app.apps.FlightMapsAppConfig',
+    #apps for rest framework
+    'rest_framework',
+    'rest_framework.authtoken',
+    #'rest_auth',
+
+    #user api
+    'users_api.apps.UsersApiConfig',
     
 ]
+
+AUTH_USER_MODEL = 'users_api.urls'
+REST_FRAMEWORK = {
+  'DEFAULT_PERMISSION_CLASSES': (
+      'rest_framework.permissions.IsAuthenticated',
+  ),
+  'DEFAULT_AUTHENTICATION_CLASSES': (
+      'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+      'rest_framework.authentication.SessionAuthentication',
+      'rest_framework.authentication.BasicAuthentication',
+  ),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

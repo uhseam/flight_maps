@@ -1,2 +1,5 @@
 django
-#pytest-django
+django-admin
+coverage
+requests
+djangorestframework

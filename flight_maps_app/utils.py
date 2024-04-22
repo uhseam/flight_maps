@@ -1,6 +1,6 @@
 import requests
 from typing import List
-from .models import Flight, Reservation
+from .models import Flight#, Reservation
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.db import IntegrityError

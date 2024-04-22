@@ -26,7 +26,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('search/', include('flight_maps_app.urls')),
-    path('', RedirectView.as_view(url='search/', permanent=True)), #redirects homepage to search
-] + static(settings.STATIC_URL,
-            document_root=settings.STATIC_ROOT)
+    path('', include('flight_maps_app.urls')),
+    #path('', RedirectView.as_view(url='search/', permanent=True)), #redirects homepage to search
+    path('login/', include('user_login.urls'))
+] #+ static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
