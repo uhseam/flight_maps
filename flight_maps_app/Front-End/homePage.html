@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight.com</title>
+  <link rel="stylesheet" href="styles.css">
+  
+  <script>
+    function toggleReturnDate() {
+      var tripType = document.getElementById("trip-type").value;
+      var returnDateInput = document.getElementById("return-date");
+
+      if (tripType === "roundtrip") {
+        returnDateInput.style.display = "inline-block";
+      } else {
+        returnDateInput.style.display = "none";
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="Flight_map.png" alt="Flight.com">
+      <h1>Flight.com</h1>
+    </div>
+   <!-- <nav>
+      <ul>
+        <li><a href="#">Flights</a></li>
+        <li><a href="#">Hotels</a></li>
+        <li><a href="#">Car Rentals</a></li>
+        <li><a href="#">Packages</a></li>
+        <li><a href="#">Explore</a></li>
+      </ul>
+    </nav>
+    -->
+    <div class="auth-buttons">
+      <button onclick="location.href='register.html'">Register</button>
+      <button onclick="location.href='signin.html'">Sign in</button>
+    </div>
+  </header>
+  
+  <main>
+    <section class="hero">
+      <h2>Discover Your Next Adventure</h2>
+      <p>Find the best deals on flights, hotels, car rentals, and vacation packages.</p>
+    </section>
+
+    <section class="search">
+      <h2>Search for Your Trip</h2>
+      <form>
+        <div class="search-options">
+          <div class="trip-type">
+            <label for="trip-type">Search flights:</label>
+            <select id="trip-type" onchange="toggleReturnDate()">
+              <option value="roundtrip">Roundtrip</option>
+              <option value="one-way">One-way</option>
+              <option value="multi-city">Multi-city</option>
+            </select>
+          </div>
+          <div class="fare-class">
+            <label for="fare-class">Fare class:</label>
+            <select id="fare-class">
+              <option value="economy">Economy</option>
+              <option value="business">Business</option>
+              <option value="first-class">First Class</option>
+            </select>
+          </div>
+          <div class="location">
+            <input type="text" placeholder="Leaving from">
+            <input type="text" placeholder="Going to">
+            <label for="checkin-date">Check-in Date:</label>
+            <input type="date" id="checkin-date">
+            <label for="checkout-date">Check-out Date:</label>
+            <input type="date" id="checkout-date">
+            <select>
+              <option value="1">1 traveler</option>
+              <option value="2">2 travelers</option>
+              <option value="3">3 travelers</option>
+              <option value="4">4 travelers</option>
+              <!-- Add more options as needed -->
+            </select>
+            <input type="submit" value="Search">
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <section class="hotels-info" id="hotels-info" style="display:none;">
+      <h2>Hotels Information</h2>
+      <!-- Add hotel information here -->
+    </section>
+
+    <section class="featured">
+      <h2>Featured Destinations</h2>
+      <!-- Include featured destinations here -->
+      <div class="destination-row">
+        <div class="destination-card">
+          <img src="https://cdn.britannica.com/48/179448-138-40EABF32/Overview-New-York-City.jpg" alt="New York City">
+          <h3>New York City, USA</h3>
+          <p>New York City offers iconic landmarks such as the Statue of Liberty, Times Square, and Central Park. Experience the vibrant culture, world-class dining, and endless entertainment options.</p>
+          <a href="https://capturetheatlas.com/cities-near-new-york/" target="_blank">Learn more</a>
+        </div>
+        <div class="destination-card">
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/e9/dc/33/caption.jpg?w=1200&h=-1&s=1&cx=1920&cy=1080&chk=v1_4b01e66c610783ed4045" alt="Florida">
+          <h3>Florida, USA</h3>
+          <p>Florida is known for its sunny weather, beautiful beaches, and popular attractions like Walt Disney World and Miami Beach. Explore the diverse wildlife, vibrant cities, and rich culture of the Sunshine State.</p>
+          <a href="https://www.travelandleisure.com/trip-ideas/beach-vacations/best-places-to-visit-in-florida" target="_blank">Learn more</a>
+        </div>
+        <div class="destination-card">
+          <img src="https://ktla.com/wp-content/uploads/sites/4/2020/04/GettyImages-478821794.jpg?w=2560&h=1440&crop=1" alt="California">
+          <h3>California, USA</h3>
+          <p>California is known for its diverse landscapes, ranging from beaches and forests to deserts and mountains. Explore cities like Los Angeles and San Francisco, visit national parks such as Yosemite, and enjoy the laid-back California lifestyle.</p>
+          <a href="https://www.worldatlas.com/cities/10-best-towns-in-california-to-visit-in-2024.html" target="_blank">Learn more</a>
+
+        </div>
+       <!-- <div>
+        <div class="destination-card">
+          <img src="https://www.omnihotels.com/-/media/images/globals/cityshots/austin-capitol-building-aerial-skyline-81190405.jpg?h=660&la=en&w=1170" alt="Texas">
+          <h3>Texas, USA</h3>
+          <p>Explore the vast and diverse state of Texas, home to vibrant cities like Houston, Dallas, and Austin, as well as natural wonders such as Big Bend National Park and the Gulf Coast beaches.</p>
+          <a href="https://www.travelandleisure.com/places-to-visit-in-texas-according-to-a-local-7373463" target="_blank">Learn more</a>
+        </div>
+        <div class="destination-card">
+          <img src="https://www.touropia.com/gfx/b/2014/09/rocky_mountain_national_park-2.jpg" alt="Colorado">
+          <h3>Colorado, USA</h3>
+          <p>Experience the breathtaking landscapes of Colorado, from the Rocky Mountains to the red rock formations of Garden of the Gods. Enjoy outdoor adventures like skiing, hiking, and whitewater rafting.</p>
+          <a href="https://www.travelandleisure.com/best-places-to-visit-in-colorado-7510432"target="_blank">Learn more</a>
+        </div>
+        <div class="destination-card">
+          <img src="https://www.travelinglifestyle.net/wp-content/uploads/2023/07/8-Great-Weekend-Getaways-In-Arizona-For-Summer-2023-768x512.jpg" alt="Arizona">
+          <h3>Arizona, USA</h3>
+          <p>Discover the wonders of Arizona, including the Grand Canyon, Sedona's red rocks, and the unique desert landscapes. Experience Native American culture, outdoor adventures, and vibrant cities.</p>
+          <a href="https://www.travelandleisure.com/best-places-to-visit-in-arizona-7378067"target="_blank">Learn more</a>
+        </div>
+      -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Travelo. All rights reserved.</p>
+  </footer>
+</body>
+</html>
